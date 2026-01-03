@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Beküldés</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; padding: 20px; }
+        .form-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; max-width: 500px; }
+        h2 { color: #005a87; margin-bottom: 20px; }
+        label { display: block; margin-top: 15px; font-weight: bold; color: #005a87; }
+        input, select, textarea { width: 100%; padding: 12px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: #005a87; color: white; border: none; border-radius: 4px; margin-top: 20px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #004466; }
+    </style>
+</head>
+<body>
+    <div class="form-card">
+        <h2>Új Bejegyzés</h2>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Your Name" required>
+
+            <label>Your Email</label>
+            <input type="email" name="email" placeholder="Your Email" required>
+
+            <label>Post Title</label>
+            <input type="text" name="title" placeholder="Post Title">
+
+            <label>Post Category</label>
+            <select name="category">
+                <option value="">Please select a category..</option>
+                <option value="blog">Blog</option>
+                <option value="news">Hírek</option>
+            </select>
+
+            <label>Kép feltöltése</label>
+            <input type="file" name="file" required>
+
+            <label>Üzenet</label>
+            <textarea name="message" rows="5"></textarea>
+
+            <button type="submit">Küldés</button>
+        </form>
+    </div>
+</body>
+</html>
